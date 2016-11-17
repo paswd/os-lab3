@@ -84,6 +84,9 @@ void *ChanseCounter(void *arg) {
 		threads_started++;
 		usleep(MSEC_CONST);
 	}
+	for (size_t i = oldest_thread; i < obj->Experiments; i++) {
+		pthread_join(threads_tmp[i], NULL);
+	}
 
 	return arg;
 }
