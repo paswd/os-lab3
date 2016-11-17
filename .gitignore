@@ -29,7 +29,7 @@
 *.app
 
 handler
-os-lab2
+os-lab3
 in.txt
 out.txt
 protocol.txt
