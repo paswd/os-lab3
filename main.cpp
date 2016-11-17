@@ -47,7 +47,6 @@ void *ExperimentModeller(void *arg) {
 	Container *obj = (Container *) arg;
 
 	size_t i = obj->ExperimentNum;
-	//cout << "ExN: " << i << endl;
 
 	obj->Total[i] = obj->Points;
 	for (size_t j = obj->Step; j < obj->K; j++) {
@@ -84,7 +83,6 @@ void *ChanseCounter(void *arg) {
 		pthread_create(&(threads_tmp[i]), NULL, ExperimentModeller, arg);
 		threads_started++;
 		usleep(MSEC_CONST);
-		//sleep(1);
 	}
 
 	return arg;
@@ -137,7 +135,7 @@ int main(int argc, char* argv[]) {
 	pthread_join(thread[0], NULL);
 	pthread_join(thread[1], NULL);
 
-	if (thread_result[1] != 0 || thread_result[1] != 0) {
+	if (thread_result[0] != 0 || thread_result[1] != 0) {
 		cout << "ERROR: Modeling games. Aborting..." << endl;
 		return 0;
 	}
