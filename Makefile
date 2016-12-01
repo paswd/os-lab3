@@ -10,4 +10,4 @@ main.o: main.cpp
 	$(COMPILLER) -c $(FLAGS) main.cpp
 
 clear:
-	-rm -f *.o *.gch os-lab2
+	-rm -f *.o *.gch os-lab3
